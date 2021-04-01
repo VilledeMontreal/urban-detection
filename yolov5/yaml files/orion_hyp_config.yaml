@@ -1,0 +1,23 @@
+lr0: 'orion~loguniform(0.001, 0.1)'
+lrf: 'orion~uniform(0.05, 0.5)'
+momentum: 'orion~uniform(0.75, 0.98)'
+weight_decay: 'orion~uniform(0.0002, 0.0007)'
+giou: 'orion~uniform(0.02, 0.2)'
+cls: 'orion~uniform(0.2, 2.0)'
+cls_pw: 'orion~uniform(0.5, 2.0)'
+obj: 'orion~uniform(0.2, 2.0)'
+obj_pw: 'orion~uniform(0.7, 2.0)'
+iou_t: 'orion~uniform(0.1, 0.3)'
+anchor_t: 'orion~uniform(2.0, 6.0)'
+fl_gamma: 0.0
+hsv_h: 'orion~uniform(0.0, 0.1)'
+hsv_s: 'orion~uniform(0.0, 0.9)'
+hsv_v: 'orion~uniform(0.0, 0.6)'
+degrees: 'orion~uniform(0.0, 5.0)'
+translate: 'orion~uniform(0.0, 0.5)'
+scale: 'orion~uniform(0.0, 1.0)'
+shear: 'orion~uniform(0.0, 1.0)'
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+mixup: 'orion~uniform(0.0, 1.0)'

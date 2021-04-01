@@ -1,0 +1,12 @@
+storage:
+  database:
+    type: 'pickleddb'
+    name: 'orion_test'
+    host: '../orion_db/save.pkl'
+experiment:
+  algorithms: 
+    asha:
+      seed: 0
+      num_rungs: null
+      num_brackets: 1
+  strategy: StubParallelStrategy
