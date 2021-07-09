@@ -79,7 +79,7 @@ __YOLOv5 X-704__
 
 
 ## Requirements
-The following packages were used at the specified version. Newer versions might not be compatible.
+Python 3.8 or later and the following packages were used at the specified version. Newer versions might not be compatible.
 
 | Package       | Version    |
 | :------------ |  --------: |
@@ -88,7 +88,6 @@ The following packages were used at the specified version. Newer versions might 
 | opencv-python | 4.4.0      |
 | python        | 3.6.9      |
 | orion         | 0.1.8      |
-
 
 ## Config
 
@@ -246,6 +245,23 @@ The arguments in this case are:
   -   --verbose: Activating this will include metrics for individual classes
   -   --batch-size: Batch size at inference time. Latency calculations will be affected by the batch size. 
 
+
+## Getting started
+If you want to try our models and never done that before, here is a kick-start.
+
+1. Clone the repo. 
+1. Make sure you have python >= 3.8 installed and install all needed packages by running:
+```pip install -r requirements.txt```.
+1. Download the models provided in the *Release* section. You can use X-512 for a starter. 
+1. Create a folder containing the images you want to run detection on. Let's call it ```image_in``` and suppose, for simplicity, it is located in the ```/yolov5/``` directory of your local setup.
+1. Follow instructions in section **Inference from Checkpoint**. For instance, suppose you want to use model X-512 and you added a copy in the ```/yolov5/weights/``` directory in your local setup, then run the following from the ```/yolov5/``` directory : 
+```python detect.py --weights weights/X-512.pt --source image_in  --img-size 512```
+
+1. Results will be in ```/yolov5/inference/output```.
+1. You can change and arguments following the documentation provided in section **Inference from Checkpoint**.
+
+We recommend you follow the tutorials and play with the notebooks provided by the yolov5 project (see ```/yolov5/README```).
+
 ### License
 This project is licensed under two different licenses and is separated into two different folders for convenience. The content of the folder `/yolov5/` inherits its license from [Ultralytics' YOLOv5 repository](https://github.com/ultralytics/yolov5) from which it was forked. This folder is thus licensed under the GNU General Public License version 3 (see GNU_LICENSE for details). The content of `/utils_data_prep/` was created to pre-process the object detection datasets prior to training YOLOv5 models, and as such is original and independent of the YOLOv5 content. For this reason, it is licensed under the MIT license (see [MIT License](LICENSE) for details).
 
@@ -359,7 +375,6 @@ Les *packages* suivants ont été utilisés dans la version spécifiée. Les ver
 | opencv-python | 4.4.0      |
 | python        | 3.6.9      |
 | orion         | 0.1.8      |
-
 
 ## Configuration
 Afin d'effectuer l'entraînement d'un modèle YOLOv5, trois fichiers de configuration de type *.yaml* sont requis. Ils sont tous contenus dans le répertoire `/yolov5/yaml files`:
@@ -517,6 +532,22 @@ Les options dans ce cas sont:
   -   --img-size: La taille des images en entrée au réseau de neurones (e.g. 512). Il n'est pas nécessaire de redimensionner manuellement les images car cette étape est faite automatiquement par le modèle au moment de l'entraînement. 512 est recommandé pour les modèles S-512 et X-512. 704 est recommandé pour le modèle X-704.
   -   --verbose: L'ajout de cette option permettra d'afficher des métriques additionelles pour chacune des classes. 
   -   --batch-size: Taille des lots au moment de l'inférence. Les calculs de latence sont affectés par la taille des lots.  
+
+## Démarrage
+Si vous voulez essayer nos modèles et que vous n'avez pas d'expérience, voici un coup de pouce.
+
+1. Clonez le dépôt.
+1. Assurez-vous que python >= 3.8 est installé et installez tous les packages nécessaires en exécutant : ```pip install -r requirements.txt```.
+
+1. Téléchargez les modèles fournis dans la section *Release*. Vous pouvez utiliser X-512 pour commencer.
+
+1. Créez un dossier contenant les images sur lesquelles vous souhaitez exécuter la détection. Appelons-le ```image_in``` et supposons, pour plus de simplicité, qu'il se trouve dans le répertoire ```/yolov5/``` de votre configuration locale.
+
+1. Suivez les instructions de la section **Inférence à partir d'un checkpoint**. Par exemple, supposons que vous souhaitiez utiliser le modèle X-512 et que vous ayez ajouté une copie dans le répertoire ```/yolov5/weights/``` de votre configuration locale, puis exécutez la commande suivante à partir du répertoire ```/yolov5/``` : ```python detect.py --weights weights/ X-512.pt --source image_in --img-size 512```. Les résultats seront dans ```/yolov5/inference/output```.
+
+Vous pouvez modifier vos arguments en suivant la documentation fournie dans la section **Inférence à partir d'un checkpoint**.
+
+Nous vous recommandons de suivre les tutoriels et de jouer avec les cahiers fournis par le projet yolov5 (voir ```/yolov5/README```).
 
 ### Contribuer
 Veuillez lire [CONTRIBUTING](CONTRIBUTING.md#french-version) pour plus de détails sur notre code de conduite et sur le processus de soumissions des demandes.
